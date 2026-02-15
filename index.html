@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shreemantyogi - A tribute to the life, vision, and legacy of Chhatrapati Shivaji Maharaj, the founder of Swarajya.">
+    <title>Shreemantyogi - The Founder of Swarajya</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HistoricalFigure",
+        "name": "Chhatrapati Shivaji Maharaj",
+        "birthDate": "1630-02-19",
+        "birthPlace": "Shivneri Fort, Maharashtra",
+        "description": "Founder of the Maratha Empire and pioneer of Swarajya"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --kesari: #FF6B00;
+            --bhagwa: #E25800;
+            --deep-brown: #2D1810;
+            --brown: #5C3D2E;
+            --gold: #D4A84B;
+            --gold-light: #F4D789;
+            --parchment: #F5E6D3;
+            --cream: #FAF3EB;
+            --white: #FEFEFE;
+            --text-dark: #1A0F0A;
+            --text-muted: #6B5344;
+        }
+        
+        [data-theme="dark"] {
+            --deep-brown: #0D0705;
+            --brown: #3D2518;
+            --parchment: #1A0F0A;
+            --cream: #251810;
+            --white: #1A0F0A;
+            --text-dark: #F5E6D3;
+            --text-muted: #B8A089;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Fort Wall Pattern */
+        .fort-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0V0zm5 5v10h10V5H5zm15 0v10h10V5H20zm15 0v10h10V5H35zm15 0v10h10V5H50zM5 20v10h10V20H5zm15 0v10h10V20H20zm15 0v10h10V20H35zm15 0v10h10V20H50zM5 35v10h10V35H5zm15 0v10h10V35H20zm15 0v10h10V35H35zm15 0v10h10V35H50zM5 50v10h10V50H5zm15 0v10h10V50H20zm15 0v10h10V50H35zm15 0v10h10V50H50z' fill='%232D1810' fill-opacity='0.03'/%3E%3C/svg%3E");
+        }
+        
+        /* Parchment Texture */
+        .parchment-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-blend-mode: overlay;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            background: rgba(45, 24, 16, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 168, 75, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .nav-container.scrolled {
+            background: rgba(45, 24, 16, 0.98);
+        }
+        
+        .nav-link {
+            position: relative;
+            color: var(--gold-light);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--kesari));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link:focus::after { width: 100%; }
+        .nav-link:hover, .nav-link:focus { color: var(--gold); }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(180deg, 
+                rgba(45, 24, 16, 1) 0%, 
+                rgba(92, 61, 46, 0.95) 50%,
+                rgba(226, 88, 0, 0.3) 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(212, 168, 75, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        /* Animated Saffron Flag */
+        .flag-container {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            width: 120px;
+            height: 200px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .flag-container {
+                width: 80px;
+                height: 140px;
+                top: 10%;
+                right: 5%;
+            }
+        }
+        
+        .flag-pole {
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold) 0%, #8B6914 100%);
+            border-radius: 3px;
+            position: absolute;
+            left: 0;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+        }
+        
+        .flag {
+            position: absolute;
+            left: 6px;
+            top: 0;
+            width: 100px;
+            height: 66%;
+            background: linear-gradient(180deg, #FF6B00 0%, #E25800 100%);
+            transform-origin: left center;
+            animation: flagWave 4s ease-in-out infinite;
+            box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .flag { width: 65px; }
+        }
+        
+        @keyframes flagWave {
+            0%, 100% { transform: skewY(0deg) scaleX(1); }
+            25% { transform: skewY(2deg) scaleX(0.98); }
+            50% { transform: skewY(-1deg) scaleX(1.02); }
+            75% { transform: skewY(1deg) scaleX(0.99); }
+        }
+        
+        .flag::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, var(--gold) 0%, #B8860B 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(212, 168, 75, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .flag::after { width: 28px; height: 28px; }
+        }
+        
+        /* Golden Glow Button */
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold) 0%, #B8860B 50%, var(--gold) 100%);
+            background-size: 200% 200%;
+            color: var(--deep-brown);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 
+                0 0 30px rgba(212, 168, 75, 0.4),
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            animation: goldenPulse 3s ease-in-out infinite;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            transform: rotate(45deg);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(45deg) translateX(-100%); }
+            50% { transform: rotate(45deg) translateX(100%); }
+        }
+        
+        @keyframes goldenPulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(212, 168, 75, 0.4), 0 4px 15px rgba(0, 0, 0, 0.3); }
+            50% { box-shadow: 0 0 50px rgba(212, 168, 75, 0.6), 0 4px 15px rgba(0, 0, 0, 0.3); }
+        }
+        
+        .cta-button:hover {
+            background-position: 100% 100%;
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px rgba(212, 168, 75, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Section Styles */
+        .section-title {
+            color: var(--deep-brown);
+            position: relative;
+            display: inline-block;
+        }
+        
+        [data-theme="dark"] .section-title { color: var(--gold-light); }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold), var(--kesari), var(--gold));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(212, 168, 75, 0.6);
+            border: 3px solid var(--cream);
+        }
+        
+        /* Spotlight Banner */
+        .spotlight-banner {
+            background: linear-gradient(135deg, var(--deep-brown) 0%, #4A2C1A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spotlight-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(212, 168, 75, 0.2) 0%, transparent 50%);
+            animation: spotlightRotate 20s linear infinite;
+        }
+        
+        @keyframes spotlightRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Cards */
+        .info-card {
+            background: var(--white);
+            border: 1px solid rgba(212, 168, 75, 0.2);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--kesari), var(--gold), var(--kesari));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .info-card:hover::before { transform: scaleX(1); }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(45, 24, 16, 0.15);
+        }
+        
+        [data-theme="dark"] .info-card {
+            background: var(--brown);
+            border-color: rgba(212, 168, 75, 0.3);
+        }
+        
+        /* Quote Box */
+        .quote-box {
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(212, 168, 75, 0.1) 100%);
+            border-left: 4px solid var(--kesari);
+            padding: 30px;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-family: 'Cinzel', serif;
+            font-size: 80px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            width: 50px;
+            height: 26px;
+            background: rgba(212, 168, 75, 0.3);
+            border-radius: 13px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 168, 75, 0.5);
+        }
+        
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 18px;
+            height: 18px;
+            background: var(--gold);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        [data-theme="dark"] .theme-toggle::after {
+            left: calc(100% - 21px);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: var(--deep-brown);
+            z-index: 1000;
+            transition: right 0.4s ease;
+            padding: 80px 30px;
+        }
+        
+        .mobile-menu.open { right: 0; }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Focus States */
+        *:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        
+        /* Golden Divider */
+        .golden-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 60px 0;
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: floatUp 8s ease-in-out infinite;
+        }
+        
+        @keyframes floatUp {
+            0% { opacity: 0; transform: translateY(0) scale(0); }
+            10% { opacity: 0.8; transform: scale(1); }
+            90% { opacity: 0.2; }
+            100% { opacity: 0; transform: translateY(-100vh) scale(0.5); }
+        }
+        
+        /* Coronation Badge */
+        .coronation-badge {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--gold) 0%, #B8860B 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgba(212, 168, 75, 0.5);
+            animation: badgeGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes badgeGlow {
+            0%, 100% { box-shadow: 0 0 40px rgba(212, 168, 75, 0.5); }
+            50% { box-shadow: 0 0 60px rgba(212, 168, 75, 0.8); }
+        }
+        
+        /* Fort Silhouette */
+        .fort-silhouette {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 200px;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200V100h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40v100H0z' fill='%23000' fill-opacity='0.1'/%3E%3C/svg%3E") no-repeat bottom center;
+            background-size: cover;
+            pointer-events: none;
+        }
+        
+        /* Stat Counter */
+        .stat-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--kesari), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Portrait Image Styles */
+        .hero-portrait-container {
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        .hero-portrait {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            box-shadow: 0 0 40px rgba(212, 168, 75, 0.4);
+            background: var(--brown);
+        }
+        
+        @media (min-width: 768px) {
+            .hero-portrait {
+                width: 240px;
+                height: 240px;
+            }
+        }
+        
+        .portrait-ring {
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 168, 75, 0.3);
+            animation: ringPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes ringPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container fixed top-0 left-0 right-0 z-50 px-4 lg:px-8 py-4" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3" aria-label="Shreemantyogi Home">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-amber-100" style="font-family: 'Cinzel', serif;">Shreemantyogi</span>
+            </a>
+            
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#early-life" class="nav-link text-sm tracking-wide">Early Life</a>
+                <a href="#birth-vision" class="nav-link text-sm tracking-wide">Birth of Vision</a>
+                <a href="#swarajya" class="nav-link text-sm tracking-wide">Swarajya</a>
+                <a href="#military" class="nav-link text-sm tracking-wide">Military Genius</a>
+                <a href="#coronation" class="nav-link text-sm tracking-wide">Coronation</a>
+                <a href="#legacy" class="nav-link text-sm tracking-wide">Legacy</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" role="switch" aria-checked="false"></button>
+                
+                <button class="lg:hidden p-2 text-amber-100" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+        <button class="absolute top-6 right-6 text-amber-100" id="closeMenu" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <nav class="flex flex-col gap-6">
+            <a href="#early-life" class="text-amber-100 text-lg hover:text-amber-400 transition-colors">Early Life</a>
+            <a href="#birth-vision" class="text-amber-100 text-lg hover:text-amber-400 transition-colors">Birth of Vision</a>
+            <a href="#swarajya" class="text-amber-100 text-lg hover:text-amber-400 transition-colors">Swarajya</a>
+            <a href="#military" class="text-amber-100 text-lg hover:text-amber-400 transition-colors">Military Genius</a>
+            <a href="#coronation" class="text-amber-100 text-lg hover:text-amber-400 transition-colors">Coronation</a>
+            <a href="#legacy" class="text-amber-100 text-lg hover:text-amber-400 transition-colors">Legacy</a>
+        </nav>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center relative" id="hero">
+        <!-- Floating Particles -->
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 5s;"></div>
+        
+        <!-- Saffron Flag -->
+        <div class="flag-container" aria-hidden="true">
+            <div class="flag-pole"></div>
+            <div class="flag"></div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-4 relative z-10">
+            
+            <!-- Portrait Image -->
+            <div class="hero-portrait-container reveal">
+                <div class="portrait-ring"></div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Chhatrapati_Shivaji_Maharaj.png/440px-Chhatrapati_Shivaji_Maharaj.png" 
+                     alt="Portrait of Chhatrapati Shivaji Maharaj" 
+                     class="hero-portrait">
+            </div>
+
+            <!-- Hero Text Content -->
+            <div class="text-center md:text-left">
+                <p class="text-amber-400 tracking-[0.3em] text-sm mb-6 reveal" style="font-family: 'Cinzel', serif;">A TRIBUTE TO THE GREAT MARATHA</p>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-amber-50 mb-6 reveal reveal-delay-1" style="font-family: 'Cinzel', serif; text-shadow: 0 4px 30px rgba(212, 168, 75, 0.3);">
+                    Shreemantyogi
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-amber-200/80 mb-4 reveal reveal-delay-2" style="font-family: 'Cinzel', serif;">
+                    The Founder of Swarajya
+                </p>
+                
+                <p class="text-amber-100/60 max-w-xl mb-10 text-lg reveal reveal-delay-3">
+                    A Tribute to Courage, Dharma, and Vision
+                </p>
+                
+                <a href="#early-life" class="cta-button inline-block reveal reveal-delay-4">
+                    Explore the Legacy
+                </a>
+            </div>
+        </div>
+        
+        <div class="fort-silhouette" aria-hidden="true"></div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-amber-400/60">
+            <span class="text-xs tracking-widest">SCROLL</span>
+            <div class="w-px h-12 bg-gradient-to-b from-amber-400/60 to-transparent animate-pulse"></div>
+        </div>
+    </section>
+    
+    <!-- Early Life Section -->
+    <section class="py-24 px-4 fort-pattern" id="early-life" style="background: var(--cream);">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Early Life and Background</h2>
+                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+                    The formative years that shaped a legend who would change the course of Indian history
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="timeline reveal">
+                    <div class="timeline-item">
+                        <span class="text-sm font-semibold" style="color: var(--kesari);">19 February 1630</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Divine Birth at Shivneri</h3>
+                        <p style="color: var(--text-muted);">Born at the sacred Shivneri Fort to Shahaji Bhonsle and the revered Rajmata Jijabai, young Shivaji was destined for greatness from his very first breath.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="text-sm font-semibold" style="color: var(--kesari);">1630-1647</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Mother's Sacred Guidance</h3>
+                        <p style="color: var(--text-muted);">Rajmata Jijabai instilled in him the values of dharma, justice, and the dream of Swarajya. She narrated stories from the Ramayana and Mahabharata, shaping his moral compass.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="text-sm font-semibold" style="color: var(--kesari);">1640s</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Education and Training</h3>
+                        <p style="color: var(--text-muted);">Under the guidance of Dadaji Kondadev, he mastered Sanskrit, mathematics, military strategy, and the art of administration, preparing for his destined role.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <span class="text-sm font-semibold" style="color: var(--kesari);">1646</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">First Step to Swarajya</h3>
+                        <p style="color: var(--text-muted);">At just 16, he acquired the Torna Fort, marking the humble beginning of what would become the mighty Maratha Empire.</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="info-card reveal reveal-delay-1">
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2" style="color: var(--deep-brown);">Birth of a Visionary</h4>
+                                <p style="color: var(--text-muted);">The fort of Shivneri, standing proud against the Sahyadri mountains, witnessed the birth of the one who would challenge empires.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-box reveal reveal-delay-2">
+                        <p class="text-lg relative z-10" style="color: var(--deep-brown);">
+                            Mother Jijabai's dream was not just a kingdom, but a righteous land where every subject would live with dignity and justice.
+                        </p>
+                        <p class="mt-4 text-sm font-semibold" style="color: var(--gold);">- Historical Account</p>
+                    </div>
+                    
+                    <div class="info-card reveal reveal-delay-3">
+                        <h4 class="font-bold text-lg mb-4" style="color: var(--deep-brown);">Core Values Instilled</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--text-muted);">Respect for all religions</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--text-muted);">Justice above power</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--text-muted);">Service to motherland</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--text-muted);">Protection of the weak</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Special Highlight: Birth Date Section -->
+    <section class="spotlight-banner py-24 px-4 relative" id="birth-vision">
+        <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full" style="background: radial-gradient(circle, rgba(212, 168, 75, 0.15) 0%, transparent 70%);"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="coronation-badge mx-auto mb-8 reveal">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#2D1810" stroke-width="1.5">
+                    <path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z"/>
+                </svg>
+            </div>
+            
+            <p class="text-amber-400 tracking-[0.2em] text-sm mb-4 reveal reveal-delay-1" style="font-family: 'Cinzel', serif;">A DAY THAT CHANGED HISTORY</p>
+            
+            <h2 class="text-4xl md:text-6xl font-bold text-amber-50 mb-6 reveal reveal-delay-2" style="font-family: 'Cinzel', serif;">
+                19 February 1630
+            </h2>
+            
+            <p class="text-2xl text-amber-200/90 mb-8 reveal reveal-delay-3" style="font-family: 'Cinzel', serif;">
+                The Birth of a Vision
+            </p>
+            
+            <div class="max-w-3xl mx-auto">
+                <p class="text-amber-100/70 text-lg leading-relaxed mb-8 reveal reveal-delay-4">
+                    On this sacred day, within the protective walls of Shivneri Fort, a child was born who would rise to become the embodiment of courage, wisdom, and dharma. This date marks not merely a birth, but the dawn of Swarajya - a vision of self-rule that would inspire generations for centuries to come.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center reveal reveal-delay-1">
+                        <div class="stat-number">370+</div>
+                        <p class="text-amber-200/60 text-sm mt-2">Forts Conquered</p>
+                    </div>
+                    <div class="text-center reveal reveal-delay-2">
+                        <div class="stat-number">50</div>
+                        <p class="text-amber-200/60 text-sm mt-2">Years of Life</p>
+                    </div>
+                    <div class="text-center reveal reveal-delay-3">
+                        <div class="stat-number">1674</div>
+                        <p class="text-amber-200/60 text-sm mt-2">Year of Coronation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vision of Swarajya -->
+    <section class="py-24 px-4 parchment-texture" id="swarajya" style="background: var(--parchment);">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Vision of Swarajya</h2>
+                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+                    A revolutionary concept of self-governance rooted in dharma, justice, and people's welfare
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="info-card reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--kesari), var(--bhagwa));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11h16V10"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Self-Rule</h3>
+                    <p style="color: var(--text-muted);">The concept of Swarajya went beyond mere political independence - it envisioned a state governed by the people, for the people, rooted in dharmic principles.</p>
+                </div>
+                
+                <div class="info-card reveal reveal-delay-2">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--gold), #B8860B);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Administrative Reforms</h3>
+                    <p style="color: var(--text-muted);">Innovative systems of governance including the Ashtapradhan Mandal - a council of eight ministers, each with specific responsibilities for efficient administration.</p>
+                </div>
+                
+                <div class="info-card reveal reveal-delay-3">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Justice System</h3>
+                    <p style="color: var(--text-muted);">A fair and accessible judicial system where even the poorest subject could receive justice. The principle that the king was not above the law.</p>
+                </div>
+                
+                <div class="info-card reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Religious Tolerance</h3>
+                    <p style="color: var(--text-muted);">Complete freedom of worship for all faiths. His court included people from various religions, and he respected all places of worship equally.</p>
+                </div>
+                
+                <div class="info-card reveal reveal-delay-2">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--gold), var(--kesari));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">People-First Governance</h3>
+                    <p style="color: var(--text-muted);">Policies focused on farmers' welfare, fair taxation, and protection of the common people. The ruler was seen as a servant of the people.</p>
+                </div>
+                
+                <div class="info-card reveal reveal-delay-3">
+                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--bhagwa), var(--brown));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <path d="M3 9h18M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Revenue Reform</h3>
+                    <p style="color: var(--text-muted);">Introduction of the Ryotwari system, eliminating middlemen and ensuring farmers paid taxes directly to the state at fair rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Military Genius -->
+    <section class="py-24 px-4 relative" id="military" style="background: var(--cream);">
+        <div class="absolute inset-0 fort-pattern" aria-hidden="true"></div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Military Genius</h2>
+                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+                    Strategic brilliance that reshaped the art of warfare in the Indian subcontinent
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="space-y-8">
+                        <div class="flex gap-4 reveal reveal-delay-1">
+                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--deep-brown), var(--brown));">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                                    <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
+                                    <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                                    <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
+                                    <path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/>
+                                    <path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/>
+                                    <path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
+                                    <path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/>
+                                    <path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Ganimi Kava</h3>
+                                <p style="color: var(--text-muted);">Revolutionary guerrilla warfare tactics that used the Western Ghats' terrain to decisive advantage. Small, mobile units striking with precision and vanishing into the mountains.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 reveal reveal-delay-2">
+                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--kesari), var(--bhagwa));">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Naval Power</h3>
+                                <p style="color: var(--text-muted);">Visionary understanding of maritime defense led to the creation of a powerful navy. He built numerous sea forts and established coastal defenses that protected the Konkan coastline.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 reveal reveal-delay-3">
+                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold), #8B6914);">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M3 21h18M5 21V7l8-4v18M13 21V9l6 3v9"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Strategic Forts</h3>
+                                <p style="color: var(--text-muted);">A network of over 370 forts across the Sahyadri range, each strategically positioned for defense and communication. Forts like Raigad, Pratapgad, and Sindhudurg became legendary.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 reveal reveal-delay-4">
+                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Leadership</h3>
+                                <p style="color: var(--text-muted);">Leading from the front, inspiring loyalty through personal example. His ability to unite diverse communities under one banner remains a masterclass in leadership.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2 reveal">
+                    <div class="relative">
+                        <div class="aspect-square rounded-lg overflow-hidden" style="background: linear-gradient(135deg, var(--deep-brown), var(--brown));">
+                            <!-- Fort Illustration -->
+                            <svg viewBox="0 0 400 400" class="w-full h-full p-8" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="fortGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#D4A84B;stop-opacity:0.8" />
+                                        <stop offset="100%" style="stop-color:#8B6914;stop-opacity:0.6" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Mountains -->
+                                <path d="M0 350 L80 200 L120 250 L180 150 L240 220 L300 120 L360 200 L400 180 L400 400 L0 400 Z" fill="url(#fortGrad)" opacity="0.3"/>
+                                <!-- Fort Base -->
+                                <rect x="120" y="220" width="160" height="120" fill="#D4A84B" opacity="0.6"/>
+                                <!-- Fort Towers -->
+                                <rect x="100" y="180" width="40" height="160" fill="#D4A84B" opacity="0.8"/>
+                                <rect x="260" y="180" width="40" height="160" fill="#D4A84B" opacity="0.8"/>
+                                <!-- Battlements -->
+                                <rect x="100" y="170" width="10" height="20" fill="#D4A84B"/>
+                                <rect x="120" y="170" width="10" height="20" fill="#D4A84B"/>
+                                <rect x="260" y="170" width="10" height="20" fill="#D4A84B"/>
+                                <rect x="280" y="170" width="10" height="20" fill="#D4A84B"/>
+                                <!-- Central Tower -->
+                                <rect x="180" y="140" width="40" height="100" fill="#D4A84B" opacity="0.9"/>
+                                <polygon points="200,100 180,140 220,140" fill="#FF6B00"/>
+                                <!-- Flag -->
+                                <line x1="200" y1="100" x2="200" y2="60" stroke="#D4A84B" stroke-width="3"/>
+                                <path d="M200 60 Q220 70 200 80 Q220 90 200 100" fill="#FF6B00"/>
+                                <!-- Gate -->
+                                <rect x="180" y="280" width="40" height="60" fill="#2D1810"/>
+                                <path d="M180 280 Q200 260 220 280" fill="#2D1810"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Stats overlay -->
+                        <div class="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2">
+                            <div class="text-center p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
+                                <div class="text-2xl font-bold" style="color: var(--gold);">370+</div>
+                                <div class="text-xs" style="color: var(--gold-light);">Forts</div>
+                            </div>
+                            <div class="text-center p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
+                                <div class="text-2xl font-bold" style="color: var(--gold);">100K+</div>
+                                <div class="text-xs" style="color: var(--gold-light);">Soldiers</div>
+                            </div>
+                            <div class="text-center p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
+                                <div class="text-2xl font-bold" style="color: var(--gold);">50+</div>
+                                <div class="text-xs" style="color: var(--gold-light);">Battles</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Coronation Section -->
+    <section class="py-24 px-4 relative" id="coronation" style="background: linear-gradient(180deg, var(--deep-brown) 0%, #4A2C1A 100%);">
+        <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div class="absolute top-0 left-1/4 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(212, 168, 75, 0.1) 0%, transparent 70%);"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-amber-400 tracking-[0.2em] text-sm mb-4 reveal" style="font-family: 'Cinzel', serif;">6 JUNE 1674</p>
+                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal reveal-delay-1" style="color: var(--gold-light);">Coronation and Empire</h2>
+                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-2" style="color: var(--gold-light); opacity: 0.7;">
+                    The historic coronation at Raigad Fort that established the sovereign Maratha Empire
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="p-8 rounded-lg reveal" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 168, 75, 0.2);">
+                        <h3 class="text-2xl font-bold mb-6" style="color: var(--gold); font-family: 'Cinzel', serif;">The Grand Ceremony</h3>
+                        <p class="mb-4 leading-relaxed" style="color: var(--gold-light); opacity: 0.8;">
+                            On the auspicious day of 6 June 1674, at the magnificent Raigad Fort, Shivaji Maharaj was crowned as Chhatrapati - the sovereign ruler. The ceremony was conducted with great grandeur according to Hindu traditions, performed by Gaga Bhatta, a respected scholar from Varanasi.
+                        </p>
+                        <p class="leading-relaxed" style="color: var(--gold-light); opacity: 0.8;">
+                            The coronation wasn't merely a ceremonial event; it was a powerful declaration of Swarajya - the establishment of a sovereign Hindu kingdom after centuries of foreign domination. It inspired millions and marked the beginning of a new era in Indian history.
+                        </p>
+                        
+                        <div class="golden-divider"></div>
+                        
+                        <h4 class="text-xl font-bold mb-4" style="color: var(--gold);">The Ashtapradhan Mandal</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--gold-light);">Peshwa - Prime Minister</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--gold-light);">Amatya - Finance Minister</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--gold-light);">Mantri - Chronicler</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--gold-light);">Senapati - Commander</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--gold-light);">Sumant - Foreign Minister</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
+                                <span style="color: var(--gold-light);">Nyayadhish - Chief Justice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="text-center p-6 rounded-lg reveal reveal-delay-1" style="background: rgba(212, 168, 75, 0.1); border: 1px solid rgba(212, 168, 75, 0.3);">
+                        <div class="coronation-badge mx-auto mb-4" style="width: 80px; height: 80px;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2D1810" stroke-width="1.5">
+                                <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold mb-2" style="color: var(--gold);">Chhatrapati</h4>
+                        <p class="text-sm" style="color: var(--gold-light); opacity: 0.7;">The Sovereign Title</p>
+                    </div>
+                    
+                    <div class="p-6 rounded-lg reveal reveal-delay-2" style="background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.3);">
+                        <h4 class="font-bold mb-3" style="color: var(--kesari);">Raigad Fort</h4>
+                        <p class="text-sm" style="color: var(--gold-light); opacity: 0.8;">
+                            The capital of the Maratha Empire, standing 820 meters tall in the Sahyadri mountains, witnessed the historic coronation ceremony.
+                        </p>
+                    </div>
+                    
+                    <div class="quote-box rounded-lg reveal reveal-delay-3" style="background: rgba(212, 168, 75, 0.1); border-left-color: var(--gold);">
+                        <p class="text-sm" style="color: var(--gold-light);">
+                            This coronation established the foundation of a sovereign state based on the principles of justice, welfare, and dharma.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Legacy Section -->
+    <section class="py-24 px-4" id="legacy" style="background: var(--parchment);">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Legacy and Inspiration</h2>
+                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+                    An eternal legacy that continues to inspire generations across the world
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="info-card reveal reveal-delay-1">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--deep-brown);">Impact on Indian History</h3>
+                    <p class="mb-4" style="color: var(--text-muted);">
+                        Chhatrapati Shivaji Maharaj's legacy fundamentally altered the course of Indian history. He proved that even the mightiest empires could be challenged with strategic thinking, courage, and the support of the people.
+                    </p>
+                    <p style="color: var(--text-muted);">
+                        His administrative innovations, military strategies, and governance principles became the foundation for the Maratha Empire that would eventually span across the Indian subcontinent.
+                    </p>
+                </div>
+                
+                <div class="info-card reveal reveal-delay-2">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--deep-brown);">Inspiration for Youth</h3>
+                    <p class="mb-4" style="color: var(--text-muted);">
+                        His life story continues to inspire millions of young people across India and the world. From a young boy dreaming of Swarajya to becoming its architect, his journey exemplifies what determination and vision can achieve.
+                    </p>
+                    <p style="color: var(--text-muted);">
+                        Values of justice, equality, respect for all religions, and service to the nation remain relevant and powerful guiding principles for today's generation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="quote-box rounded-lg reveal reveal-delay-3">
+                <p class="text-xl md:text-2xl text-center relative z-10" style="color: var(--deep-brown); font-family: 'Cinzel', serif;">
+                    "Even if everyone leaves you, never abandon your principles. Stand firm for what is right, for dharma ultimately triumphs."
+                </p>
+                <p class="text-center mt-4 font-semibold" style="color: var(--gold);">- Teaching attributed to Chhatrapati Shivaji Maharaj</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6 mt-12">
+                <div class="text-center reveal reveal-delay-1">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Visionary</h4>
+                    <p class="text-sm" style="color: var(--text-muted);">Dreamt of Swarajya when it seemed impossible</p>
+                </div>
+                
+                <div class="text-center reveal reveal-delay-2">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold), #8B6914);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Protector</h4>
+                    <p class="text-sm" style="color: var(--text-muted);">Defended dharma and protected his people</p>
+                </div>
+                
+                <div class="text-center reveal reveal-delay-3">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                            <line x1="9" y1="9" x2="9.01" y2="9"/>
+                            <line x1="15" y1="9" x2="15.01" y2="9"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Just Ruler</h4>
+                    <p class="text-sm" style="color: var(--text-muted);">Established fair governance for all</p>
+                </div>
+                
+                <div class="text-center reveal reveal-delay-4">
+                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--bhagwa), var(--kesari));">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Eternal Icon</h4>
+                    <p class="text-sm" style="color: var(--text-muted);">Continues to inspire generations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Guidelines Section -->
+    <section class="py-16 px-4" style="background: var(--cream);">
+        <div class="max-w-4xl mx-auto">
+            <div class="p-8 rounded-lg reveal" style="background: var(--white); border: 1px solid rgba(212, 168, 75, 0.2);">
+                <h3 class="text-xl font-bold mb-6 text-center" style="color: var(--deep-brown);">Guidelines and Respect Policy</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm" style="color: var(--text-muted);">Content is for educational and inspirational purposes only</p>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm" style="color: var(--text-muted);">Historical information is presented with utmost respect</p>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm" style="color: var(--text-muted);">Cultural values and traditions are preserved and honored</p>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <p class="text-sm" style="color: var(--text-muted);">No distortion or misuse of historical facts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 px-4" style="background: var(--deep-brown);">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-lg" style="color: var(--gold-light); font-family: 'Cinzel', serif;">Shreemantyogi</span>
+                </div>
+                
+                <p class="text-sm text-center" style="color: var(--gold-light); opacity: 0.6;">
+                    A tribute to the life, vision, and legacy of Chhatrapati Shivaji Maharaj
+                </p>
+                
+                <p class="text-sm" style="color: var(--gold-light); opacity: 0.6;">
+                    Developed under <span style="color: var(--gold);">BRUTALTOOLS</span>
+                </p>
+            </div>
+            
+            <div class="mt-8 pt-8 text-center" style="border-top: 1px solid rgba(212, 168, 75, 0.2);">
+                <p class="text-xs" style="color: var(--gold-light); opacity: 0.4;">
+                    Jai Bhavani, Jai Shivaji
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.setAttribute('data-theme', 'dark');
+                if (themeToggle) { themeToggle.setAttribute('aria-checked', 'true'); }
+            }
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const isDark = body.getAttribute('data-theme') === 'dark';
+                    if (isDark) {
+                        body.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'light');
+                        themeToggle.setAttribute('aria-checked', 'false');
+                    } else {
+                        body.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                        themeToggle.setAttribute('aria-checked', 'true');
+                    }
+                });
+            }
+            
+            const menuBtn = document.getElementById('menuBtn');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuOverlay = document.getElementById('menuOverlay');
+            const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+            
+            function openMenu() {
+                if (mobileMenu && menuOverlay && menuBtn) {
+                    mobileMenu.classList.add('open');
+                    menuOverlay.classList.add('open');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                    body.style.overflow = 'hidden';
+                }
+            }
+            
+            function closeMenuFunc() {
+                if (mobileMenu && menuOverlay && menuBtn) {
+                    mobileMenu.classList.remove('open');
+                    menuOverlay.classList.remove('open');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    body.style.overflow = '';
+                }
+            }
+            
+            if (menuBtn) menuBtn.addEventListener('click', openMenu);
+            if (closeMenu) closeMenu.addEventListener('click', closeMenuFunc);
+            if (menuOverlay) menuOverlay.addEventListener('click', closeMenuFunc);
+            
+            mobileLinks.forEach(function(link) { link.addEventListener('click', closeMenuFunc); });
+            
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) { navbar.classList.add('scrolled'); } 
+                    else { navbar.classList.remove('scrolled'); }
+                });
+            }
+            
+            const revealElements = document.querySelectorAll('.reveal, .timeline-item');
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (prefersReducedMotion) {
+                revealElements.forEach(function(el) { el.classList.add('visible'); });
+            } else {
+                const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+                const revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                revealElements.forEach(function(el) { revealObserver.observe(el); });
+            }
+            
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#') {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            const headerOffset = 80;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            window.scrollTo({ top: offsetPosition, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+                        }
+                    }
+                });
+            });
+            
+            if (!prefersReducedMotion) {
+                const particles = document.querySelectorAll('.particle');
+                particles.forEach(function(particle, index) {
+                    particle.style.animationDelay = (index * 1.5) + 's';
+                    particle.style.left = (Math.random() * 100) + '%';
+                });
+            }
+            
+            function animateCounter(element, target, duration) {
+                if (!element) return;
+                let start = 0;
+                const increment = target / (duration / 16);
+                function updateCounter() {
+                    start += increment;
+                    if (start < target) { element.textContent = Math.floor(start); requestAnimationFrame(updateCounter); } 
+                    else { element.textContent = target; }
+                }
+                updateCounter();
+            }
+            
+            const statNumbers = document.querySelectorAll('.stat-number');
+            if (!prefersReducedMotion && statNumbers.length > 0) {
+                const statObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const text = entry.target.textContent;
+                            const number = parseInt(text.replace(/\D/g, ''));
+                            if (!isNaN(number) && number > 0) {
+                                entry.target.textContent = '0';
+                                animateCounter(entry.target, number, 2000);
+                            }
+                            statObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                statNumbers.forEach(function(stat) { statObserver.observe(stat); });
+            }
+        });
+    </script>
+</body>
+</html>
