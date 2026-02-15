@@ -73,6 +73,7 @@
             color: var(--text-dark);
             overflow-x: hidden;
             transition: background 0.5s ease, color 0.5s ease;
+            -webkit-font-smoothing: antialiased;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -129,6 +130,7 @@
             );
             position: relative;
             overflow: hidden;
+            padding-top: 80px;
         }
         
         .hero-section::before {
@@ -150,10 +152,10 @@
         
         @media (max-width: 768px) {
             .flag-container {
-                width: 80px;
-                height: 140px;
-                top: 10%;
-                right: 5%;
+                width: 60px;
+                height: 110px;
+                top: 12%;
+                right: 4%;
             }
         }
         
@@ -180,7 +182,7 @@
         }
         
         @media (max-width: 768px) {
-            .flag { width: 65px; }
+            .flag { width: 50px; }
         }
         
         @keyframes flagWave {
@@ -203,7 +205,7 @@
         }
         
         @media (max-width: 768px) {
-            .flag::after { width: 28px; height: 28px; }
+            .flag::after { width: 20px; height: 20px; }
         }
         
         .cta-button {
@@ -212,7 +214,7 @@
             color: var(--deep-brown);
             font-family: 'Cinzel', serif;
             font-weight: 700;
-            padding: 18px 40px;
+            padding: 16px 32px;
             border-radius: 4px;
             position: relative;
             overflow: hidden;
@@ -222,6 +224,8 @@
                 0 4px 15px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
             animation: goldenPulse 3s ease-in-out infinite;
+            display: inline-block;
+            text-align: center;
         }
         
         .cta-button::before {
@@ -271,7 +275,7 @@
         
         .timeline {
             position: relative;
-            padding-left: 40px;
+            padding-left: 30px;
         }
         
         .timeline::before {
@@ -284,7 +288,7 @@
         
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             opacity: 0;
             transform: translateX(-30px);
             transition: all 0.6s ease;
@@ -298,10 +302,10 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -48px;
-            top: 8px;
-            width: 20px;
-            height: 20px;
+            left: -38px;
+            top: 6px;
+            width: 16px;
+            height: 16px;
             background: var(--gold);
             border-radius: 50%;
             box-shadow: 0 0 20px rgba(212, 168, 75, 0.6);
@@ -332,10 +336,14 @@
             background: var(--white);
             border: 1px solid rgba(212, 168, 75, 0.2);
             border-radius: 8px;
-            padding: 30px;
+            padding: 20px;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+        }
+        
+        @media(min-width: 768px) {
+            .info-card { padding: 30px; }
         }
         
         .info-card::before {
@@ -363,21 +371,29 @@
         .quote-box {
             background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(212, 168, 75, 0.1) 100%);
             border-left: 4px solid var(--kesari);
-            padding: 30px;
+            padding: 20px;
             font-style: italic;
             position: relative;
+        }
+        
+        @media(min-width: 768px) {
+             .quote-box { padding: 30px; }
         }
         
         .quote-box::before {
             content: '"';
             font-family: 'Cinzel', serif;
-            font-size: 80px;
+            font-size: 60px;
             color: var(--gold);
             opacity: 0.3;
             position: absolute;
             top: -10px;
-            left: 20px;
+            left: 10px;
             line-height: 1;
+        }
+        
+        @media(min-width: 768px) {
+            .quote-box::before { font-size: 80px; left: 20px; }
         }
         
         .reveal {
@@ -405,6 +421,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border: 1px solid rgba(212, 168, 75, 0.5);
+            flex-shrink: 0;
         }
         
         .theme-toggle::after {
@@ -431,7 +448,7 @@
             max-width: 300px;
             height: 100vh;
             background: var(--deep-brown);
-            z-index: 1000;
+            z-index: 1001;
             transition: right 0.4s ease;
             padding: 80px 30px;
         }
@@ -442,7 +459,7 @@
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(0,0,0,0.7);
-            z-index: 999;
+            z-index: 1000;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -461,7 +478,11 @@
         .golden-divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 60px 0;
+            margin: 40px 0;
+        }
+        
+        @media(min-width: 768px) {
+            .golden-divider { margin: 60px 0; }
         }
         
         .particle {
@@ -482,8 +503,8 @@
         }
         
         .coronation-badge {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--gold) 0%, #B8860B 100%);
             border-radius: 50%;
             display: flex;
@@ -491,6 +512,10 @@
             justify-content: center;
             box-shadow: 0 0 40px rgba(212, 168, 75, 0.5);
             animation: badgeGlow 3s ease-in-out infinite;
+        }
+        
+        @media(min-width: 768px) {
+            .coronation-badge { width: 100px; height: 100px; }
         }
         
         @keyframes badgeGlow {
@@ -502,19 +527,23 @@
             position: absolute;
             bottom: 0; left: 0; right: 0;
             height: 200px;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200V100h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40v100H0z' fill='%23000' fill-opacity='0.1'/%3E%3C/svg%3E") no-repeat bottom center;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200V100h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40v100H0z' fill='%23000' fill-opacity='0.1'/%3E%3C/svg%3E") no-repeat bottom center;
             background-size: cover;
             pointer-events: none;
         }
         
         .stat-number {
             font-family: 'Cinzel', serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--kesari), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+        
+        @media(min-width: 768px) {
+            .stat-number { font-size: 3rem; }
         }
 
         .hero-portrait-container {
@@ -523,8 +552,8 @@
         }
         
         .hero-portrait {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--gold);
@@ -557,15 +586,15 @@
     <!-- Navigation -->
     <nav class="nav-container fixed top-0 left-0 right-0 z-50 px-4 lg:px-8 py-4" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3" aria-label="Shreemantyogi Home">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <a href="#" class="flex items-center gap-2 md:gap-3" aria-label="Shreemantyogi Home">
+                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-7 md:h-7">
                         <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                         <path d="M2 17l10 5 10-5"/>
                         <path d="M2 12l10 5 10-5"/>
                     </svg>
                 </div>
-                <span class="text-xl font-bold text-amber-100" style="font-family: 'Cinzel', serif;">Shreemantyogi</span>
+                <span class="text-base md:text-xl font-bold text-amber-100" style="font-family: 'Cinzel', serif;">Shreemantyogi</span>
             </a>
             
             <div class="hidden lg:flex items-center gap-8">
@@ -577,7 +606,7 @@
                 <a href="#legacy" class="nav-link text-sm tracking-wide">Legacy</a>
             </div>
             
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 md:gap-4">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" role="switch" aria-checked="false"></button>
                 
                 <button class="lg:hidden p-2 text-amber-100" id="menuBtn" aria-label="Open menu" aria-expanded="false">
@@ -623,33 +652,33 @@
             <div class="flag"></div>
         </div>
         
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-4 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 px-4 relative z-10">
             
             <!-- Portrait Image Updated Here -->
             <div class="hero-portrait-container reveal">
                 <div class="portrait-ring"></div>
-                <img src="https://i.ibb.co/PsDJ6Dm7/images-2-FKuldeep-Pawar-2-F2024-2-F4-2-F26-2-F1714115018391-2-F1-1.webp" 
+                <img src="https://i.ibb.co/1YW1JypT/Screenshot-2026-02-15-190636.png" 
                      alt="Portrait of Chhatrapati Shivaji Maharaj" 
                      class="hero-portrait">
             </div>
 
             <!-- Hero Text Content -->
             <div class="text-center md:text-left">
-                <p class="text-amber-400 tracking-[0.3em] text-sm mb-6 reveal" style="font-family: 'Cinzel', serif;">A TRIBUTE TO THE GREAT MARATHA</p>
+                <p class="text-amber-400 tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-sm mb-4 md:mb-6 reveal" style="font-family: 'Cinzel', serif;">A TRIBUTE TO THE GREAT MARATHA</p>
                 
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-amber-50 mb-6 reveal reveal-delay-1" style="font-family: 'Cinzel', serif; text-shadow: 0 4px 30px rgba(212, 168, 75, 0.3);">
+                <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold text-amber-50 mb-4 md:mb-6 reveal reveal-delay-1" style="font-family: 'Cinzel', serif; text-shadow: 0 4px 30px rgba(212, 168, 75, 0.3);">
                     Shreemantyogi
                 </h1>
                 
-                <p class="text-xl md:text-2xl text-amber-200/80 mb-4 reveal reveal-delay-2" style="font-family: 'Cinzel', serif;">
+                <p class="text-lg md:text-2xl text-amber-200/80 mb-3 md:mb-4 reveal reveal-delay-2" style="font-family: 'Cinzel', serif;">
                     The Founder of Swarajya
                 </p>
                 
-                <p class="text-amber-100/60 max-w-xl mb-10 text-lg reveal reveal-delay-3">
+                <p class="text-amber-100/60 max-w-xl mb-8 md:mb-10 text-sm md:text-base reveal reveal-delay-3">
                     A Tribute to Courage, Dharma, and Vision
                 </p>
                 
-                <a href="#early-life" class="cta-button inline-block reveal reveal-delay-4">
+                <a href="#early-life" class="cta-button text-sm md:text-base reveal reveal-delay-4">
                     Explore the Legacy
                 </a>
             </div>
@@ -665,83 +694,83 @@
     </section>
     
     <!-- Early Life Section -->
-    <section class="py-24 px-4 fort-pattern" id="early-life" style="background: var(--cream);">
+    <section class="py-12 md:py-24 px-4 fort-pattern" id="early-life" style="background: var(--cream);">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Early Life and Background</h2>
-                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="section-title text-2xl md:text-5xl font-bold mb-4 md:mb-6 reveal">Early Life and Background</h2>
+                <p class="text-base md:text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
                     The formative years that shaped a legend who would change the course of Indian history
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
                 <div class="timeline reveal">
                     <div class="timeline-item">
                         <span class="text-sm font-semibold" style="color: var(--kesari);">19 February 1630</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Divine Birth at Shivneri</h3>
-                        <p style="color: var(--text-muted);">Born at the sacred Shivneri Fort to Shahaji Bhonsle and the revered Rajmata Jijabai, young Shivaji was destined for greatness from his very first breath.</p>
+                        <h3 class="text-lg md:text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Divine Birth at Shivneri</h3>
+                        <p class="text-sm md:text-base" style="color: var(--text-muted);">Born at the sacred Shivneri Fort to Shahaji Bhonsle and the revered Rajmata Jijabai, young Shivaji was destined for greatness from his very first breath.</p>
                     </div>
                     
                     <div class="timeline-item">
                         <span class="text-sm font-semibold" style="color: var(--kesari);">1630-1647</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Mother's Sacred Guidance</h3>
-                        <p style="color: var(--text-muted);">Rajmata Jijabai instilled in him the values of dharma, justice, and the dream of Swarajya. She narrated stories from the Ramayana and Mahabharata, shaping his moral compass.</p>
+                        <h3 class="text-lg md:text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Mother's Sacred Guidance</h3>
+                        <p class="text-sm md:text-base" style="color: var(--text-muted);">Rajmata Jijabai instilled in him the values of dharma, justice, and the dream of Swarajya. She narrated stories from the Ramayana and Mahabharata, shaping his moral compass.</p>
                     </div>
                     
                     <div class="timeline-item">
                         <span class="text-sm font-semibold" style="color: var(--kesari);">1640s</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Education and Training</h3>
-                        <p style="color: var(--text-muted);">Under the guidance of Dadaji Kondadev, he mastered Sanskrit, mathematics, military strategy, and the art of administration, preparing for his destined role.</p>
+                        <h3 class="text-lg md:text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">Education and Training</h3>
+                        <p class="text-sm md:text-base" style="color: var(--text-muted);">Under the guidance of Dadaji Kondadev, he mastered Sanskrit, mathematics, military strategy, and the art of administration, preparing for his destined role.</p>
                     </div>
                     
                     <div class="timeline-item">
                         <span class="text-sm font-semibold" style="color: var(--kesari);">1646</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">First Step to Swarajya</h3>
-                        <p style="color: var(--text-muted);">At just 16, he acquired the Torna Fort, marking the humble beginning of what would become the mighty Maratha Empire.</p>
+                        <h3 class="text-lg md:text-xl font-bold mt-2 mb-3" style="color: var(--deep-brown);">First Step to Swarajya</h3>
+                        <p class="text-sm md:text-base" style="color: var(--text-muted);">At just 16, he acquired the Torna Fort, marking the humble beginning of what would become the mighty Maratha Empire.</p>
                     </div>
                 </div>
                 
                 <div class="space-y-6">
                     <div class="info-card reveal reveal-delay-1">
-                        <div class="flex items-start gap-4">
-                            <div class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <div class="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                                     <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                                     <path d="M2 17l10 5 10-5"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg mb-2" style="color: var(--deep-brown);">Birth of a Visionary</h4>
-                                <p style="color: var(--text-muted);">The fort of Shivneri, standing proud against the Sahyadri mountains, witnessed the birth of the one who would challenge empires.</p>
+                                <h4 class="font-bold text-base md:text-lg mb-2" style="color: var(--deep-brown);">Birth of a Visionary</h4>
+                                <p class="text-sm md:text-base" style="color: var(--text-muted);">The fort of Shivneri, standing proud against the Sahyadri mountains, witnessed the birth of the one who would challenge empires.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="quote-box reveal reveal-delay-2">
-                        <p class="text-lg relative z-10" style="color: var(--deep-brown);">
+                        <p class="text-base md:text-lg relative z-10" style="color: var(--deep-brown);">
                             Mother Jijabai's dream was not just a kingdom, but a righteous land where every subject would live with dignity and justice.
                         </p>
-                        <p class="mt-4 text-sm font-semibold" style="color: var(--gold);">- Historical Account</p>
+                        <p class="mt-4 text-xs md:text-sm font-semibold" style="color: var(--gold);">- Historical Account</p>
                     </div>
                     
                     <div class="info-card reveal reveal-delay-3">
-                        <h4 class="font-bold text-lg mb-4" style="color: var(--deep-brown);">Core Values Instilled</h4>
+                        <h4 class="font-bold text-base md:text-lg mb-4" style="color: var(--deep-brown);">Core Values Instilled</h4>
                         <ul class="space-y-3">
                             <li class="flex items-center gap-3">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--text-muted);">Respect for all religions</span>
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-sm md:text-base" style="color: var(--text-muted);">Respect for all religions</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--text-muted);">Justice above power</span>
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-sm md:text-base" style="color: var(--text-muted);">Justice above power</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--text-muted);">Service to motherland</span>
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-sm md:text-base" style="color: var(--text-muted);">Service to motherland</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--text-muted);">Protection of the weak</span>
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-sm md:text-base" style="color: var(--text-muted);">Protection of the weak</span>
                             </li>
                         </ul>
                     </div>
@@ -751,45 +780,45 @@
     </section>
     
     <!-- Special Highlight: Birth Date Section -->
-    <section class="spotlight-banner py-24 px-4 relative" id="birth-vision">
+    <section class="spotlight-banner py-16 md:py-24 px-4 relative" id="birth-vision">
         <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full" style="background: radial-gradient(circle, rgba(212, 168, 75, 0.15) 0%, transparent 70%);"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full" style="background: radial-gradient(circle, rgba(212, 168, 75, 0.15) 0%, transparent 70%);"></div>
         </div>
         
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="coronation-badge mx-auto mb-8 reveal">
-                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#2D1810" stroke-width="1.5">
+            <div class="coronation-badge mx-auto mb-6 md:mb-8 reveal">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2D1810" stroke-width="1.5" class="md:w-12 md:h-12">
                     <path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z"/>
                 </svg>
             </div>
             
-            <p class="text-amber-400 tracking-[0.2em] text-sm mb-4 reveal reveal-delay-1" style="font-family: 'Cinzel', serif;">A DAY THAT CHANGED HISTORY</p>
+            <p class="text-amber-400 tracking-[0.15em] md:tracking-[0.2em] text-xs md:text-sm mb-4 reveal reveal-delay-1" style="font-family: 'Cinzel', serif;">A DAY THAT CHANGED HISTORY</p>
             
-            <h2 class="text-4xl md:text-6xl font-bold text-amber-50 mb-6 reveal reveal-delay-2" style="font-family: 'Cinzel', serif;">
+            <h2 class="text-3xl md:text-6xl font-bold text-amber-50 mb-4 md:mb-6 reveal reveal-delay-2" style="font-family: 'Cinzel', serif;">
                 19 February 1630
             </h2>
             
-            <p class="text-2xl text-amber-200/90 mb-8 reveal reveal-delay-3" style="font-family: 'Cinzel', serif;">
+            <p class="text-xl md:text-2xl text-amber-200/90 mb-6 md:mb-8 reveal reveal-delay-3" style="font-family: 'Cinzel', serif;">
                 The Birth of a Vision
             </p>
             
             <div class="max-w-3xl mx-auto">
-                <p class="text-amber-100/70 text-lg leading-relaxed mb-8 reveal reveal-delay-4">
+                <p class="text-amber-100/70 text-base md:text-lg leading-relaxed mb-8 reveal reveal-delay-4">
                     On this sacred day, within the protective walls of Shivneri Fort, a child was born who would rise to become the embodiment of courage, wisdom, and dharma. This date marks not merely a birth, but the dawn of Swarajya - a vision of self-rule that would inspire generations for centuries to come.
                 </p>
                 
-                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="grid grid-cols-3 gap-2 md:gap-6 mt-8 md:mt-12">
                     <div class="text-center reveal reveal-delay-1">
                         <div class="stat-number">370+</div>
-                        <p class="text-amber-200/60 text-sm mt-2">Forts Conquered</p>
+                        <p class="text-amber-200/60 text-xs md:text-sm mt-1 md:mt-2">Forts Conquered</p>
                     </div>
                     <div class="text-center reveal reveal-delay-2">
                         <div class="stat-number">50</div>
-                        <p class="text-amber-200/60 text-sm mt-2">Years of Life</p>
+                        <p class="text-amber-200/60 text-xs md:text-sm mt-1 md:mt-2">Years of Life</p>
                     </div>
                     <div class="text-center reveal reveal-delay-3">
                         <div class="stat-number">1674</div>
-                        <p class="text-amber-200/60 text-sm mt-2">Year of Coronation</p>
+                        <p class="text-amber-200/60 text-xs md:text-sm mt-1 md:mt-2">Year of Coronation</p>
                     </div>
                 </div>
             </div>
@@ -797,102 +826,102 @@
     </section>
     
     <!-- Vision of Swarajya -->
-    <section class="py-24 px-4 parchment-texture" id="swarajya" style="background: var(--parchment);">
+    <section class="py-12 md:py-24 px-4 parchment-texture" id="swarajya" style="background: var(--parchment);">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Vision of Swarajya</h2>
-                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="section-title text-2xl md:text-5xl font-bold mb-4 md:mb-6 reveal">Vision of Swarajya</h2>
+                <p class="text-base md:text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
                     A revolutionary concept of self-governance rooted in dharma, justice, and people's welfare
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                 <div class="info-card reveal reveal-delay-1">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--kesari), var(--bhagwa));">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--kesari), var(--bhagwa));">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-6 md:h-6">
                             <path d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11h16V10"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Self-Rule</h3>
-                    <p style="color: var(--text-muted);">The concept of Swarajya went beyond mere political independence - it envisioned a state governed by the people, for the people, rooted in dharmic principles.</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3" style="color: var(--deep-brown);">Self-Rule</h3>
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">The concept of Swarajya went beyond mere political independence - it envisioned a state governed by the people, for the people, rooted in dharmic principles.</p>
                 </div>
                 
                 <div class="info-card reveal reveal-delay-2">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--gold), #B8860B);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--gold), #B8860B);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-6 md:h-6">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Administrative Reforms</h3>
-                    <p style="color: var(--text-muted);">Innovative systems of governance including the Ashtapradhan Mandal - a council of eight ministers, each with specific responsibilities for efficient administration.</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3" style="color: var(--deep-brown);">Administrative Reforms</h3>
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">Innovative systems of governance including the Ashtapradhan Mandal - a council of eight ministers, each with specific responsibilities for efficient administration.</p>
                 </div>
                 
                 <div class="info-card reveal reveal-delay-3">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-6 md:h-6">
                             <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Justice System</h3>
-                    <p style="color: var(--text-muted);">A fair and accessible judicial system where even the poorest subject could receive justice. The principle that the king was not above the law.</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3" style="color: var(--deep-brown);">Justice System</h3>
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">A fair and accessible judicial system where even the poorest subject could receive justice. The principle that the king was not above the law.</p>
                 </div>
                 
                 <div class="info-card reveal reveal-delay-1">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-6 md:h-6">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Religious Tolerance</h3>
-                    <p style="color: var(--text-muted);">Complete freedom of worship for all faiths. His court included people from various religions, and he respected all places of worship equally.</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3" style="color: var(--deep-brown);">Religious Tolerance</h3>
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">Complete freedom of worship for all faiths. His court included people from various religions, and he respected all places of worship equally.</p>
                 </div>
                 
                 <div class="info-card reveal reveal-delay-2">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--gold), var(--kesari));">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--gold), var(--kesari));">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-6 md:h-6">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                             <circle cx="9" cy="7" r="4"/>
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">People-First Governance</h3>
-                    <p style="color: var(--text-muted);">Policies focused on farmers' welfare, fair taxation, and protection of the common people. The ruler was seen as a servant of the people.</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3" style="color: var(--deep-brown);">People-First Governance</h3>
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">Policies focused on farmers' welfare, fair taxation, and protection of the common people. The ruler was seen as a servant of the people.</p>
                 </div>
                 
                 <div class="info-card reveal reveal-delay-3">
-                    <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--bhagwa), var(--brown));">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center mb-4" style="background: linear-gradient(135deg, var(--bhagwa), var(--brown));">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-6 md:h-6">
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                             <path d="M3 9h18M9 21V9"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--deep-brown);">Revenue Reform</h3>
-                    <p style="color: var(--text-muted);">Introduction of the Ryotwari system, eliminating middlemen and ensuring farmers paid taxes directly to the state at fair rates.</p>
+                    <h3 class="text-lg md:text-xl font-bold mb-3" style="color: var(--deep-brown);">Revenue Reform</h3>
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">Introduction of the Ryotwari system, eliminating middlemen and ensuring farmers paid taxes directly to the state at fair rates.</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Military Genius -->
-    <section class="py-24 px-4 relative" id="military" style="background: var(--cream);">
+    <section class="py-12 md:py-24 px-4 relative" id="military" style="background: var(--cream);">
         <div class="absolute inset-0 fort-pattern" aria-hidden="true"></div>
         
         <div class="max-w-6xl mx-auto relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Military Genius</h2>
-                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="section-title text-2xl md:text-5xl font-bold mb-4 md:mb-6 reveal">Military Genius</h2>
+                <p class="text-base md:text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
                     Strategic brilliance that reshaped the art of warfare in the Indian subcontinent
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="order-2 lg:order-1">
-                    <div class="space-y-8">
-                        <div class="flex gap-4 reveal reveal-delay-1">
-                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--deep-brown), var(--brown));">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                    <div class="space-y-6 md:space-y-8">
+                        <div class="flex gap-3 md:gap-4 reveal reveal-delay-1">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--deep-brown), var(--brown));">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2" class="md:w-7 md:h-7">
                                     <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/>
                                     <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
                                     <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/>
@@ -904,38 +933,38 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Ganimi Kava</h3>
-                                <p style="color: var(--text-muted);">Revolutionary guerrilla warfare tactics that used the Western Ghats' terrain to decisive advantage. Small, mobile units striking with precision and vanishing into the mountains.</p>
+                                <h3 class="text-lg md:text-xl font-bold mb-2" style="color: var(--deep-brown);">Ganimi Kava</h3>
+                                <p class="text-sm md:text-base" style="color: var(--text-muted);">Revolutionary guerrilla warfare tactics that used the Western Ghats' terrain to decisive advantage.</p>
                             </div>
                         </div>
                         
-                        <div class="flex gap-4 reveal reveal-delay-2">
-                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--kesari), var(--bhagwa));">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <div class="flex gap-3 md:gap-4 reveal reveal-delay-2">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--kesari), var(--bhagwa));">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-7 md:h-7">
                                     <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Naval Power</h3>
-                                <p style="color: var(--text-muted);">Visionary understanding of maritime defense led to the creation of a powerful navy. He built numerous sea forts and established coastal defenses that protected the Konkan coastline.</p>
+                                <h3 class="text-lg md:text-xl font-bold mb-2" style="color: var(--deep-brown);">Naval Power</h3>
+                                <p class="text-sm md:text-base" style="color: var(--text-muted);">Visionary understanding of maritime defense led to the creation of a powerful navy.</p>
                             </div>
                         </div>
                         
-                        <div class="flex gap-4 reveal reveal-delay-3">
-                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold), #8B6914);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <div class="flex gap-3 md:gap-4 reveal reveal-delay-3">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold), #8B6914);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-7 md:h-7">
                                     <path d="M3 21h18M5 21V7l8-4v18M13 21V9l6 3v9"/>
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Strategic Forts</h3>
-                                <p style="color: var(--text-muted);">A network of over 370 forts across the Sahyadri range, each strategically positioned for defense and communication. Forts like Raigad, Pratapgad, and Sindhudurg became legendary.</p>
+                                <h3 class="text-lg md:text-xl font-bold mb-2" style="color: var(--deep-brown);">Strategic Forts</h3>
+                                <p class="text-sm md:text-base" style="color: var(--text-muted);">A network of over 370 forts across the Sahyadri range, strategically positioned for defense.</p>
                             </div>
                         </div>
                         
-                        <div class="flex gap-4 reveal reveal-delay-4">
-                            <div class="w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                        <div class="flex gap-3 md:gap-4 reveal reveal-delay-4">
+                            <div class="w-12 h-12 md:w-16 md:h-16 rounded-lg flex-shrink-0 flex items-center justify-center" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2" class="md:w-7 md:h-7">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
                                     <circle cx="9" cy="7" r="4"/>
                                     <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
@@ -943,8 +972,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold mb-2" style="color: var(--deep-brown);">Leadership</h3>
-                                <p style="color: var(--text-muted);">Leading from the front, inspiring loyalty through personal example. His ability to unite diverse communities under one banner remains a masterclass in leadership.</p>
+                                <h3 class="text-lg md:text-xl font-bold mb-2" style="color: var(--deep-brown);">Leadership</h3>
+                                <p class="text-sm md:text-base" style="color: var(--text-muted);">Leading from the front, inspiring loyalty through personal example.</p>
                             </div>
                         </div>
                     </div>
@@ -953,7 +982,7 @@
                 <div class="order-1 lg:order-2 reveal">
                     <div class="relative">
                         <div class="aspect-square rounded-lg overflow-hidden" style="background: linear-gradient(135deg, var(--deep-brown), var(--brown));">
-                            <!-- Fort Illustration -->
+                            <!-- Restored SVG Illustration -->
                             <svg viewBox="0 0 400 400" class="w-full h-full p-8" aria-hidden="true">
                                 <defs>
                                     <linearGradient id="fortGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -986,17 +1015,17 @@
                         </div>
                         
                         <!-- Stats overlay -->
-                        <div class="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2">
-                            <div class="text-center p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
-                                <div class="text-2xl font-bold" style="color: var(--gold);">370+</div>
+                        <div class="absolute bottom-2 left-2 right-2 md:bottom-4 md:left-4 md:right-4 grid grid-cols-3 gap-1 md:gap-2">
+                            <div class="text-center p-2 md:p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
+                                <div class="text-lg md:text-2xl font-bold" style="color: var(--gold);">370+</div>
                                 <div class="text-xs" style="color: var(--gold-light);">Forts</div>
                             </div>
-                            <div class="text-center p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
-                                <div class="text-2xl font-bold" style="color: var(--gold);">100K+</div>
+                            <div class="text-center p-2 md:p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
+                                <div class="text-lg md:text-2xl font-bold" style="color: var(--gold);">100K+</div>
                                 <div class="text-xs" style="color: var(--gold-light);">Soldiers</div>
                             </div>
-                            <div class="text-center p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
-                                <div class="text-2xl font-bold" style="color: var(--gold);">50+</div>
+                            <div class="text-center p-2 md:p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
+                                <div class="text-lg md:text-2xl font-bold" style="color: var(--gold);">50+</div>
                                 <div class="text-xs" style="color: var(--gold-light);">Battles</div>
                             </div>
                         </div>
@@ -1007,84 +1036,84 @@
     </section>
     
     <!-- Coronation Section -->
-    <section class="py-24 px-4 relative" id="coronation" style="background: linear-gradient(180deg, var(--deep-brown) 0%, #4A2C1A 100%);">
+    <section class="py-12 md:py-24 px-4 relative" id="coronation" style="background: linear-gradient(180deg, var(--deep-brown) 0%, #4A2C1A 100%);">
         <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
-            <div class="absolute top-0 left-1/4 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(212, 168, 75, 0.1) 0%, transparent 70%);"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full" style="background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);"></div>
+            <div class="absolute top-0 left-1/4 w-48 h-48 md:w-96 md:h-96 rounded-full" style="background: radial-gradient(circle, rgba(212, 168, 75, 0.1) 0%, transparent 70%);"></div>
+            <div class="absolute bottom-0 right-1/4 w-48 h-48 md:w-96 md:h-96 rounded-full" style="background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);"></div>
         </div>
         
         <div class="max-w-6xl mx-auto relative z-10">
-            <div class="text-center mb-16">
-                <p class="text-amber-400 tracking-[0.2em] text-sm mb-4 reveal" style="font-family: 'Cinzel', serif;">6 JUNE 1674</p>
-                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal reveal-delay-1" style="color: var(--gold-light);">Coronation and Empire</h2>
-                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-2" style="color: var(--gold-light); opacity: 0.7;">
+            <div class="text-center mb-10 md:mb-16">
+                <p class="text-amber-400 tracking-[0.15em] md:tracking-[0.2em] text-xs md:text-sm mb-4 reveal" style="font-family: 'Cinzel', serif;">6 JUNE 1674</p>
+                <h2 class="section-title text-2xl md:text-5xl font-bold mb-4 md:mb-6 reveal reveal-delay-1" style="color: var(--gold-light);">Coronation and Empire</h2>
+                <p class="text-base md:text-lg max-w-3xl mx-auto reveal reveal-delay-2" style="color: var(--gold-light); opacity: 0.7;">
                     The historic coronation at Raigad Fort that established the sovereign Maratha Empire
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
                 <div class="lg:col-span-2">
-                    <div class="p-8 rounded-lg reveal" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 168, 75, 0.2);">
-                        <h3 class="text-2xl font-bold mb-6" style="color: var(--gold); font-family: 'Cinzel', serif;">The Grand Ceremony</h3>
-                        <p class="mb-4 leading-relaxed" style="color: var(--gold-light); opacity: 0.8;">
-                            On the auspicious day of 6 June 1674, at the magnificent Raigad Fort, Shivaji Maharaj was crowned as Chhatrapati - the sovereign ruler. The ceremony was conducted with great grandeur according to Hindu traditions, performed by Gaga Bhatta, a respected scholar from Varanasi.
+                    <div class="p-5 md:p-8 rounded-lg reveal" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212, 168, 75, 0.2);">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6" style="color: var(--gold); font-family: 'Cinzel', serif;">The Grand Ceremony</h3>
+                        <p class="mb-4 leading-relaxed text-sm md:text-base" style="color: var(--gold-light); opacity: 0.8;">
+                            On the auspicious day of 6 June 1674, at the magnificent Raigad Fort, Shivaji Maharaj was crowned as Chhatrapati - the sovereign ruler. The ceremony was conducted with great grandeur according to Hindu traditions.
                         </p>
-                        <p class="leading-relaxed" style="color: var(--gold-light); opacity: 0.8;">
-                            The coronation wasn't merely a ceremonial event; it was a powerful declaration of Swarajya - the establishment of a sovereign Hindu kingdom after centuries of foreign domination. It inspired millions and marked the beginning of a new era in Indian history.
+                        <p class="leading-relaxed text-sm md:text-base" style="color: var(--gold-light); opacity: 0.8;">
+                            The coronation wasn't merely a ceremonial event; it was a powerful declaration of Swarajya - the establishment of a sovereign Hindu kingdom after centuries of foreign domination.
                         </p>
                         
                         <div class="golden-divider"></div>
                         
-                        <h4 class="text-xl font-bold mb-4" style="color: var(--gold);">The Ashtapradhan Mandal</h4>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--gold-light);">Peshwa - Prime Minister</span>
+                        <h4 class="text-lg md:text-xl font-bold mb-4" style="color: var(--gold);">The Ashtapradhan Mandal</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
+                            <div class="flex items-center gap-3 p-2 md:p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-xs md:text-sm" style="color: var(--gold-light);">Peshwa - Prime Minister</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--gold-light);">Amatya - Finance Minister</span>
+                            <div class="flex items-center gap-3 p-2 md:p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-xs md:text-sm" style="color: var(--gold-light);">Amatya - Finance Minister</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--gold-light);">Mantri - Chronicler</span>
+                            <div class="flex items-center gap-3 p-2 md:p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-xs md:text-sm" style="color: var(--gold-light);">Mantri - Chronicler</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--gold-light);">Senapati - Commander</span>
+                            <div class="flex items-center gap-3 p-2 md:p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-xs md:text-sm" style="color: var(--gold-light);">Senapati - Commander</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--gold-light);">Sumant - Foreign Minister</span>
+                            <div class="flex items-center gap-3 p-2 md:p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-xs md:text-sm" style="color: var(--gold-light);">Sumant - Foreign Minister</span>
                             </div>
-                            <div class="flex items-center gap-3 p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
-                                <span class="w-2 h-2 rounded-full" style="background: var(--kesari);"></span>
-                                <span style="color: var(--gold-light);">Nyayadhish - Chief Justice</span>
+                            <div class="flex items-center gap-3 p-2 md:p-3 rounded" style="background: rgba(212, 168, 75, 0.1);">
+                                <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: var(--kesari);"></span>
+                                <span class="text-xs md:text-sm" style="color: var(--gold-light);">Nyayadhish - Chief Justice</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="space-y-6">
-                    <div class="text-center p-6 rounded-lg reveal reveal-delay-1" style="background: rgba(212, 168, 75, 0.1); border: 1px solid rgba(212, 168, 75, 0.3);">
-                        <div class="coronation-badge mx-auto mb-4" style="width: 80px; height: 80px;">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2D1810" stroke-width="1.5">
+                <div class="space-y-4 md:space-y-6">
+                    <div class="text-center p-4 md:p-6 rounded-lg reveal reveal-delay-1" style="background: rgba(212, 168, 75, 0.1); border: 1px solid rgba(212, 168, 75, 0.3);">
+                        <div class="coronation-badge mx-auto mb-4" style="width: 60px; height: 60px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2D1810" stroke-width="1.5">
                                 <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/>
                             </svg>
                         </div>
-                        <h4 class="font-bold mb-2" style="color: var(--gold);">Chhatrapati</h4>
-                        <p class="text-sm" style="color: var(--gold-light); opacity: 0.7;">The Sovereign Title</p>
+                        <h4 class="font-bold text-sm md:text-base mb-2" style="color: var(--gold);">Chhatrapati</h4>
+                        <p class="text-xs md:text-sm" style="color: var(--gold-light); opacity: 0.7;">The Sovereign Title</p>
                     </div>
                     
-                    <div class="p-6 rounded-lg reveal reveal-delay-2" style="background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.3);">
-                        <h4 class="font-bold mb-3" style="color: var(--kesari);">Raigad Fort</h4>
-                        <p class="text-sm" style="color: var(--gold-light); opacity: 0.8;">
-                            The capital of the Maratha Empire, standing 820 meters tall in the Sahyadri mountains, witnessed the historic coronation ceremony.
+                    <div class="p-4 md:p-6 rounded-lg reveal reveal-delay-2" style="background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.3);">
+                        <h4 class="font-bold text-sm md:text-base mb-3" style="color: var(--kesari);">Raigad Fort</h4>
+                        <p class="text-xs md:text-sm" style="color: var(--gold-light); opacity: 0.8;">
+                            The capital of the Maratha Empire, standing 820 meters tall in the Sahyadri mountains.
                         </p>
                     </div>
                     
-                    <div class="quote-box rounded-lg reveal reveal-delay-3" style="background: rgba(212, 168, 75, 0.1); border-left-color: var(--gold);">
-                        <p class="text-sm" style="color: var(--gold-light);">
+                    <div class="quote-box rounded-lg reveal reveal-delay-3 p-4 md:p-6" style="background: rgba(212, 168, 75, 0.1); border-left-color: var(--gold);">
+                        <p class="text-xs md:text-sm relative z-10" style="color: var(--gold-light);">
                             This coronation established the foundation of a sovereign state based on the principles of justice, welfare, and dharma.
                         </p>
                     </div>
@@ -1094,134 +1123,134 @@
     </section>
     
     <!-- Legacy Section -->
-    <section class="py-24 px-4" id="legacy" style="background: var(--parchment);">
+    <section class="py-12 md:py-24 px-4" id="legacy" style="background: var(--parchment);">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-5xl font-bold mb-6 reveal">Legacy and Inspiration</h2>
-                <p class="text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="section-title text-2xl md:text-5xl font-bold mb-4 md:mb-6 reveal">Legacy and Inspiration</h2>
+                <p class="text-base md:text-lg max-w-3xl mx-auto reveal reveal-delay-1" style="color: var(--text-muted);">
                     An eternal legacy that continues to inspire generations across the world
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="grid md:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
                 <div class="info-card reveal reveal-delay-1">
-                    <h3 class="text-xl font-bold mb-4" style="color: var(--deep-brown);">Impact on Indian History</h3>
-                    <p class="mb-4" style="color: var(--text-muted);">
+                    <h3 class="text-lg md:text-xl font-bold mb-4" style="color: var(--deep-brown);">Impact on Indian History</h3>
+                    <p class="mb-4 text-sm md:text-base" style="color: var(--text-muted);">
                         Chhatrapati Shivaji Maharaj's legacy fundamentally altered the course of Indian history. He proved that even the mightiest empires could be challenged with strategic thinking, courage, and the support of the people.
                     </p>
-                    <p style="color: var(--text-muted);">
-                        His administrative innovations, military strategies, and governance principles became the foundation for the Maratha Empire that would eventually span across the Indian subcontinent.
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">
+                        His administrative innovations, military strategies, and governance principles became the foundation for the Maratha Empire.
                     </p>
                 </div>
                 
                 <div class="info-card reveal reveal-delay-2">
-                    <h3 class="text-xl font-bold mb-4" style="color: var(--deep-brown);">Inspiration for Youth</h3>
-                    <p class="mb-4" style="color: var(--text-muted);">
-                        His life story continues to inspire millions of young people across India and the world. From a young boy dreaming of Swarajya to becoming its architect, his journey exemplifies what determination and vision can achieve.
+                    <h3 class="text-lg md:text-xl font-bold mb-4" style="color: var(--deep-brown);">Inspiration for Youth</h3>
+                    <p class="mb-4 text-sm md:text-base" style="color: var(--text-muted);">
+                        His life story continues to inspire millions of young people across India and the world. From a young boy dreaming of Swarajya to becoming its architect.
                     </p>
-                    <p style="color: var(--text-muted);">
+                    <p class="text-sm md:text-base" style="color: var(--text-muted);">
                         Values of justice, equality, respect for all religions, and service to the nation remain relevant and powerful guiding principles for today's generation.
                     </p>
                 </div>
             </div>
             
             <div class="quote-box rounded-lg reveal reveal-delay-3">
-                <p class="text-xl md:text-2xl text-center relative z-10" style="color: var(--deep-brown); font-family: 'Cinzel', serif;">
+                <p class="text-lg md:text-2xl text-center relative z-10" style="color: var(--deep-brown); font-family: 'Cinzel', serif;">
                     "Even if everyone leaves you, never abandon your principles. Stand firm for what is right, for dharma ultimately triumphs."
                 </p>
-                <p class="text-center mt-4 font-semibold" style="color: var(--gold);">- Teaching attributed to Chhatrapati Shivaji Maharaj</p>
+                <p class="text-center mt-4 font-semibold text-sm md:text-base" style="color: var(--gold);">- Teaching attributed to Chhatrapati Shivaji Maharaj</p>
             </div>
             
-            <div class="grid md:grid-cols-4 gap-6 mt-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-12">
                 <div class="text-center reveal reveal-delay-1">
-                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-3 md:mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--kesari), var(--gold));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-8 md:h-8">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                             <path d="M2 17l10 5 10-5"/>
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Visionary</h4>
-                    <p class="text-sm" style="color: var(--text-muted);">Dreamt of Swarajya when it seemed impossible</p>
+                    <h4 class="font-bold text-sm md:text-base mb-1 md:mb-2" style="color: var(--deep-brown);">Visionary</h4>
+                    <p class="text-xs md:text-sm" style="color: var(--text-muted);">Dreamt of Swarajya</p>
                 </div>
                 
                 <div class="text-center reveal reveal-delay-2">
-                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold), #8B6914);">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-3 md:mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--gold), #8B6914);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-8 md:h-8">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Protector</h4>
-                    <p class="text-sm" style="color: var(--text-muted);">Defended dharma and protected his people</p>
+                    <h4 class="font-bold text-sm md:text-base mb-1 md:mb-2" style="color: var(--deep-brown);">Protector</h4>
+                    <p class="text-xs md:text-sm" style="color: var(--text-muted);">Defended his people</p>
                 </div>
                 
                 <div class="text-center reveal reveal-delay-3">
-                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-3 md:mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--brown), #3D2518);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2" class="md:w-8 md:h-8">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
                             <line x1="9" y1="9" x2="9.01" y2="9"/>
                             <line x1="15" y1="9" x2="15.01" y2="9"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Just Ruler</h4>
-                    <p class="text-sm" style="color: var(--text-muted);">Established fair governance for all</p>
+                    <h4 class="font-bold text-sm md:text-base mb-1 md:mb-2" style="color: var(--deep-brown);">Just Ruler</h4>
+                    <p class="text-xs md:text-sm" style="color: var(--text-muted);">Fair governance</p>
                 </div>
                 
                 <div class="text-center reveal reveal-delay-4">
-                    <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--bhagwa), var(--kesari));">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-3 md:mb-4 flex items-center justify-center" style="background: linear-gradient(135deg, var(--bhagwa), var(--kesari));">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="md:w-8 md:h-8">
                             <path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7l3-7z"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold mb-2" style="color: var(--deep-brown);">Eternal Icon</h4>
-                    <p class="text-sm" style="color: var(--text-muted);">Continues to inspire generations</p>
+                    <h4 class="font-bold text-sm md:text-base mb-1 md:mb-2" style="color: var(--deep-brown);">Eternal Icon</h4>
+                    <p class="text-xs md:text-sm" style="color: var(--text-muted);">Inspires generations</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Guidelines Section -->
-    <section class="py-16 px-4" style="background: var(--cream);">
+    <section class="py-10 md:py-16 px-4" style="background: var(--cream);">
         <div class="max-w-4xl mx-auto">
-            <div class="p-8 rounded-lg reveal" style="background: var(--white); border: 1px solid rgba(212, 168, 75, 0.2);">
-                <h3 class="text-xl font-bold mb-6 text-center" style="color: var(--deep-brown);">Guidelines and Respect Policy</h3>
+            <div class="p-5 md:p-8 rounded-lg reveal" style="background: var(--white); border: 1px solid rgba(212, 168, 75, 0.2);">
+                <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6 text-center" style="color: var(--deep-brown);">Guidelines and Respect Policy</h3>
                 
-                <div class="grid md:grid-cols-2 gap-6">
+                <div class="grid md:grid-cols-2 gap-4 md:gap-6">
                     <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2" class="md:w-4 md:h-4">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
                         </div>
-                        <p class="text-sm" style="color: var(--text-muted);">Content is for educational and inspirational purposes only</p>
+                        <p class="text-xs md:text-sm" style="color: var(--text-muted);">Content is for educational and inspirational purposes only</p>
                     </div>
                     
                     <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2" class="md:w-4 md:h-4">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
                         </div>
-                        <p class="text-sm" style="color: var(--text-muted);">Historical information is presented with utmost respect</p>
+                        <p class="text-xs md:text-sm" style="color: var(--text-muted);">Historical information is presented with utmost respect</p>
                     </div>
                     
                     <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2" class="md:w-4 md:h-4">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
                         </div>
-                        <p class="text-sm" style="color: var(--text-muted);">Cultural values and traditions are preserved and honored</p>
+                        <p class="text-xs md:text-sm" style="color: var(--text-muted);">Cultural values and traditions are preserved and honored</p>
                     </div>
                     
                     <div class="flex gap-3">
-                        <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2">
+                        <div class="w-7 h-7 md:w-8 md:h-8 rounded-full flex-shrink-0 flex items-center justify-center" style="background: rgba(212, 168, 75, 0.2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A84B" stroke-width="2" class="md:w-4 md:h-4">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
                         </div>
-                        <p class="text-sm" style="color: var(--text-muted);">No distortion or misuse of historical facts</p>
+                        <p class="text-xs md:text-sm" style="color: var(--text-muted);">No distortion or misuse of historical facts</p>
                     </div>
                 </div>
             </div>
@@ -1229,7 +1258,7 @@
     </section>
     
     <!-- Footer -->
-    <footer class="py-12 px-4" style="background: var(--deep-brown);">
+    <footer class="py-10 md:py-12 px-4" style="background: var(--deep-brown);">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-3">
@@ -1240,19 +1269,19 @@
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <span class="font-bold text-lg" style="color: var(--gold-light); font-family: 'Cinzel', serif;">Shreemantyogi</span>
+                    <span class="font-bold text-base md:text-lg" style="color: var(--gold-light); font-family: 'Cinzel', serif;">Shreemantyogi</span>
                 </div>
                 
-                <p class="text-sm text-center" style="color: var(--gold-light); opacity: 0.6;">
+                <p class="text-xs md:text-sm text-center order-3 md:order-2" style="color: var(--gold-light); opacity: 0.6;">
                     A tribute to the life, vision, and legacy of Chhatrapati Shivaji Maharaj
                 </p>
                 
-                <p class="text-sm" style="color: var(--gold-light); opacity: 0.6;">
+                <p class="text-xs md:text-sm order-2 md:order-3" style="color: var(--gold-light); opacity: 0.6;">
                     Developed under <span style="color: var(--gold);">BRUTALTOOLS</span>
                 </p>
             </div>
             
-            <div class="mt-8 pt-8 text-center" style="border-top: 1px solid rgba(212, 168, 75, 0.2);">
+            <div class="mt-6 md:mt-8 pt-6 md:pt-8 text-center" style="border-top: 1px solid rgba(212, 168, 75, 0.2);">
                 <p class="text-xs" style="color: var(--gold-light); opacity: 0.4;">
                     Jai Bhavani, Jai Shivaji
                 </p>
