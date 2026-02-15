@@ -79,18 +79,15 @@
             font-family: 'Cinzel', serif;
         }
         
-        /* Fort Wall Pattern */
         .fort-pattern {
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0V0zm5 5v10h10V5H5zm15 0v10h10V5H20zm15 0v10h10V5H35zm15 0v10h10V5H50zM5 20v10h10V20H5zm15 0v10h10V20H20zm15 0v10h10V20H35zm15 0v10h10V20H50zM5 35v10h10V35H5zm15 0v10h10V35H20zm15 0v10h10V35H35zm15 0v10h10V35H50zM5 50v10h10V50H5zm15 0v10h10V50H20zm15 0v10h10V50H35zm15 0v10h10V50H50z' fill='%232D1810' fill-opacity='0.03'/%3E%3C/svg%3E");
         }
         
-        /* Parchment Texture */
         .parchment-texture {
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             background-blend-mode: overlay;
         }
         
-        /* Navigation */
         .nav-container {
             background: rgba(45, 24, 16, 0.95);
             backdrop-filter: blur(20px);
@@ -123,7 +120,6 @@
         .nav-link:focus::after { width: 100%; }
         .nav-link:hover, .nav-link:focus { color: var(--gold); }
         
-        /* Hero Section */
         .hero-section {
             min-height: 100vh;
             background: linear-gradient(180deg, 
@@ -143,7 +139,6 @@
             pointer-events: none;
         }
         
-        /* Animated Saffron Flag */
         .flag-container {
             position: absolute;
             top: 15%;
@@ -211,7 +206,6 @@
             .flag::after { width: 28px; height: 28px; }
         }
         
-        /* Golden Glow Button */
         .cta-button {
             background: linear-gradient(135deg, var(--gold) 0%, #B8860B 50%, var(--gold) 100%);
             background-size: 200% 200%;
@@ -256,7 +250,6 @@
             box-shadow: 0 0 50px rgba(212, 168, 75, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4);
         }
         
-        /* Section Styles */
         .section-title {
             color: var(--deep-brown);
             position: relative;
@@ -276,7 +269,6 @@
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
         
-        /* Timeline */
         .timeline {
             position: relative;
             padding-left: 40px;
@@ -316,7 +308,6 @@
             border: 3px solid var(--cream);
         }
         
-        /* Spotlight Banner */
         .spotlight-banner {
             background: linear-gradient(135deg, var(--deep-brown) 0%, #4A2C1A 100%);
             position: relative;
@@ -337,7 +328,6 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Cards */
         .info-card {
             background: var(--white);
             border: 1px solid rgba(212, 168, 75, 0.2);
@@ -370,7 +360,6 @@
             border-color: rgba(212, 168, 75, 0.3);
         }
         
-        /* Quote Box */
         .quote-box {
             background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(212, 168, 75, 0.1) 100%);
             border-left: 4px solid var(--kesari);
@@ -391,7 +380,6 @@
             line-height: 1;
         }
         
-        /* Scroll Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -408,7 +396,6 @@
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
         
-        /* Dark Mode Toggle */
         .theme-toggle {
             width: 50px;
             height: 26px;
@@ -437,7 +424,6 @@
             left: calc(100% - 21px);
         }
         
-        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 0; right: -100%;
@@ -467,20 +453,17 @@
             visibility: visible;
         }
         
-        /* Focus States */
         *:focus-visible {
             outline: 2px solid var(--gold);
             outline-offset: 2px;
         }
         
-        /* Golden Divider */
         .golden-divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
             margin: 60px 0;
         }
         
-        /* Floating Particles */
         .particle {
             position: absolute;
             width: 4px;
@@ -498,7 +481,6 @@
             100% { opacity: 0; transform: translateY(-100vh) scale(0.5); }
         }
         
-        /* Coronation Badge */
         .coronation-badge {
             width: 100px;
             height: 100px;
@@ -516,7 +498,6 @@
             50% { box-shadow: 0 0 60px rgba(212, 168, 75, 0.8); }
         }
         
-        /* Fort Silhouette */
         .fort-silhouette {
             position: absolute;
             bottom: 0; left: 0; right: 0;
@@ -526,7 +507,6 @@
             pointer-events: none;
         }
         
-        /* Stat Counter */
         .stat-number {
             font-family: 'Cinzel', serif;
             font-size: 3rem;
@@ -537,7 +517,6 @@
             background-clip: text;
         }
 
-        /* Portrait Image Styles */
         .hero-portrait-container {
             position: relative;
             flex-shrink: 0;
@@ -646,10 +625,10 @@
         
         <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-4 relative z-10">
             
-            <!-- Portrait Image -->
+            <!-- Portrait Image Updated Here -->
             <div class="hero-portrait-container reveal">
                 <div class="portrait-ring"></div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Chhatrapati_Shivaji_Maharaj.png/440px-Chhatrapati_Shivaji_Maharaj.png" 
+                <img src="https://i.ibb.co/PsDJ6Dm7/images-2-FKuldeep-Pawar-2-F2024-2-F4-2-F26-2-F1714115018391-2-F1-1.webp" 
                      alt="Portrait of Chhatrapati Shivaji Maharaj" 
                      class="hero-portrait">
             </div>
