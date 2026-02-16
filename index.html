@@ -318,6 +318,29 @@
             overflow: hidden;
         }
         
+        .spotlight-banner-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co/G4p3Hbf6/rajgad.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        
+        .spotlight-banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(45, 24, 16, 0.85) 0%, rgba(74, 44, 26, 0.9) 100%);
+            z-index: 1;
+        }
+        
         .spotlight-banner::before {
             content: '';
             position: absolute;
@@ -325,6 +348,7 @@
             width: 200%; height: 200%;
             background: radial-gradient(circle at center, rgba(212, 168, 75, 0.2) 0%, transparent 50%);
             animation: spotlightRotate 20s linear infinite;
+            z-index: 2;
         }
         
         @keyframes spotlightRotate {
@@ -580,6 +604,20 @@
             0%, 100% { transform: scale(1); opacity: 0.5; }
             50% { transform: scale(1.05); opacity: 1; }
         }
+
+        .military-image-container {
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+        }
+
+        .military-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
     </style>
 </head>
 <body>
@@ -654,7 +692,7 @@
         
         <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 px-4 relative z-10">
             
-            <!-- Portrait Image Updated Here -->
+            <!-- Portrait Image -->
             <div class="hero-portrait-container reveal">
                 <div class="portrait-ring"></div>
                 <img src="https://i.ibb.co/1YW1JypT/Screenshot-2026-02-15-190636.png" 
@@ -781,9 +819,10 @@
     
     <!-- Special Highlight: Birth Date Section -->
     <section class="spotlight-banner py-16 md:py-24 px-4 relative" id="birth-vision">
-        <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full" style="background: radial-gradient(circle, rgba(212, 168, 75, 0.15) 0%, transparent 70%);"></div>
-        </div>
+        <!-- Background Image -->
+        <div class="spotlight-banner-bg" aria-hidden="true"></div>
+        <!-- Overlay -->
+        <div class="spotlight-banner-overlay" aria-hidden="true"></div>
         
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <div class="coronation-badge mx-auto mb-6 md:mb-8 reveal">
@@ -980,41 +1019,11 @@
                 </div>
                 
                 <div class="order-1 lg:order-2 reveal">
-                    <div class="relative">
-                        <div class="aspect-square rounded-lg overflow-hidden" style="background: linear-gradient(135deg, var(--deep-brown), var(--brown));">
-                            <!-- Restored SVG Illustration -->
-                            <svg viewBox="0 0 400 400" class="w-full h-full p-8" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="fortGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#D4A84B;stop-opacity:0.8" />
-                                        <stop offset="100%" style="stop-color:#8B6914;stop-opacity:0.6" />
-                                    </linearGradient>
-                                </defs>
-                                <!-- Mountains -->
-                                <path d="M0 350 L80 200 L120 250 L180 150 L240 220 L300 120 L360 200 L400 180 L400 400 L0 400 Z" fill="url(#fortGrad)" opacity="0.3"/>
-                                <!-- Fort Base -->
-                                <rect x="120" y="220" width="160" height="120" fill="#D4A84B" opacity="0.6"/>
-                                <!-- Fort Towers -->
-                                <rect x="100" y="180" width="40" height="160" fill="#D4A84B" opacity="0.8"/>
-                                <rect x="260" y="180" width="40" height="160" fill="#D4A84B" opacity="0.8"/>
-                                <!-- Battlements -->
-                                <rect x="100" y="170" width="10" height="20" fill="#D4A84B"/>
-                                <rect x="120" y="170" width="10" height="20" fill="#D4A84B"/>
-                                <rect x="260" y="170" width="10" height="20" fill="#D4A84B"/>
-                                <rect x="280" y="170" width="10" height="20" fill="#D4A84B"/>
-                                <!-- Central Tower -->
-                                <rect x="180" y="140" width="40" height="100" fill="#D4A84B" opacity="0.9"/>
-                                <polygon points="200,100 180,140 220,140" fill="#FF6B00"/>
-                                <!-- Flag -->
-                                <line x1="200" y1="100" x2="200" y2="60" stroke="#D4A84B" stroke-width="3"/>
-                                <path d="M200 60 Q220 70 200 80 Q220 90 200 100" fill="#FF6B00"/>
-                                <!-- Gate -->
-                                <rect x="180" y="280" width="40" height="60" fill="#2D1810"/>
-                                <path d="M180 280 Q200 260 220 280" fill="#2D1810"/>
-                            </svg>
-                        </div>
+                    <div class="military-image-container relative">
+                        <img src="https://i.ibb.co/sJPYNt3q/istockphoto-1415611604-612x612.jpg" 
+                             alt="Historical Fort Illustration" 
+                             class="military-image">
                         
-                        <!-- Stats overlay -->
                         <div class="absolute bottom-2 left-2 right-2 md:bottom-4 md:left-4 md:right-4 grid grid-cols-3 gap-1 md:gap-2">
                             <div class="text-center p-2 md:p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
                                 <div class="text-lg md:text-2xl font-bold" style="color: var(--gold);">370+</div>
