@@ -123,14 +123,29 @@
         
         .hero-section {
             min-height: 100vh;
-            background: linear-gradient(180deg, 
-                rgba(45, 24, 16, 1) 0%, 
-                rgba(92, 61, 46, 0.95) 50%,
-                rgba(226, 88, 0, 0.3) 100%
-            );
             position: relative;
             overflow: hidden;
             padding-top: 80px;
+            /* Background Image Added */
+            background-image: url('https://i.ibb.co/zVRs2SBc/enhance-e8fvyeqd7tghs7tezkxn.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        /* Dark Overlay to ensure text readability */
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, 
+                rgba(45, 24, 16, 0.92) 0%, 
+                rgba(92, 61, 46, 0.9) 50%,
+                rgba(45, 24, 16, 0.95) 100%
+            );
+            z-index: 0;
+            pointer-events: none;
         }
         
         .hero-section::before {
@@ -139,6 +154,7 @@
             top: 0; left: 0; right: 0; bottom: 0;
             background: radial-gradient(ellipse at center top, rgba(212, 168, 75, 0.15) 0%, transparent 60%);
             pointer-events: none;
+            z-index: 1; /* Above overlay */
         }
         
         .flag-container {
@@ -148,6 +164,7 @@
             width: 120px;
             height: 200px;
             opacity: 0.9;
+            z-index: 5; /* Ensure flag is above overlay */
         }
         
         @media (max-width: 768px) {
@@ -509,6 +526,7 @@
             .golden-divider { margin: 60px 0; }
         }
         
+        /* Dust Particle Effect - KEPT AS IS */
         .particle {
             position: absolute;
             width: 4px;
@@ -517,6 +535,7 @@
             border-radius: 50%;
             opacity: 0;
             animation: floatUp 8s ease-in-out infinite;
+            z-index: 5; /* Ensured particles are above overlay */
         }
         
         @keyframes floatUp {
@@ -551,7 +570,7 @@
             position: absolute;
             bottom: 0; left: 0; right: 0;
             height: 200px;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200V100h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40v100H0z' fill='%23000' fill-opacity='0.1'/%3E%3C/svg%3E") no-repeat bottom center;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200V100h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40V60h30v40h20V60h30v40h40v100H0z' fill='%23000' fill-opacity='0.1'/%3E%3C/svg%3E") no-repeat bottom center;
             background-size: cover;
             pointer-events: none;
         }
@@ -621,6 +640,20 @@
     </style>
 </head>
 <body>
+    <!-- SoundCloud Audio Embed (Hidden) with API -->
+    <iframe 
+        id="sc-widget" 
+        width="0" 
+        height="0" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/sports-creator/videoplayback&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false&download=false&buying=false&sharing=false">
+    </iframe>
+    
+    <!-- SoundCloud Widget API -->
+    <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
+
     <!-- Navigation -->
     <nav class="nav-container fixed top-0 left-0 right-0 z-50 px-4 lg:px-8 py-4" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -676,7 +709,7 @@
     
     <!-- Hero Section -->
     <section class="hero-section flex items-center justify-center relative" id="hero">
-        <!-- Floating Particles -->
+        <!-- Floating Particles (Dust Effect) - KEPT AS IS -->
         <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
         <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
         <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
@@ -1034,7 +1067,7 @@
                                 <div class="text-xs" style="color: var(--gold-light);">Soldiers</div>
                             </div>
                             <div class="text-center p-2 md:p-3 rounded" style="background: rgba(45, 24, 16, 0.9);">
-                                <div class="text-lg md:text-2xl font-bold" style="color: var(--gold);">70+</div>
+                                <div class="text-lg md:text-2xl font-bold" style="color: var(--gold);">50+</div>
                                 <div class="text-xs" style="color: var(--gold-light);">Battles</div>
                             </div>
                         </div>
@@ -1301,6 +1334,36 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
+            // SoundCloud Widget Autoplay Handler
+            var iframe = document.getElementById('sc-widget');
+            var widget = SC.Widget(iframe);
+            var userClicked = false;
+            
+            // Function to attempt playing
+            function attemptPlay() {
+                widget.play();
+            }
+            
+            // Try to play when widget is ready
+            widget.bind(SC.Widget.Events.READY, function() {
+                // Attempt immediate play (will likely be blocked)
+                attemptPlay();
+            });
+            
+            // If browser blocks it, play on first click anywhere
+            function playOnClick() {
+                if (!userClicked) {
+                    userClicked = true;
+                    attemptPlay();
+                }
+            }
+            
+            // Listen for click on body to bypass autoplay block
+            document.body.addEventListener('click', playOnClick);
+            document.body.addEventListener('touchstart', playOnClick);
+
+            
+            // Theme Toggle
             const themeToggle = document.getElementById('themeToggle');
             const body = document.body;
             
@@ -1325,6 +1388,7 @@
                 });
             }
             
+            // Mobile Menu
             const menuBtn = document.getElementById('menuBtn');
             const closeMenu = document.getElementById('closeMenu');
             const mobileMenu = document.getElementById('mobileMenu');
@@ -1355,6 +1419,7 @@
             
             mobileLinks.forEach(function(link) { link.addEventListener('click', closeMenuFunc); });
             
+            // Navbar Scroll
             const navbar = document.getElementById('navbar');
             if (navbar) {
                 window.addEventListener('scroll', function() {
@@ -1363,6 +1428,7 @@
                 });
             }
             
+            // Reveal Animations
             const revealElements = document.querySelectorAll('.reveal, .timeline-item');
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             
@@ -1381,6 +1447,7 @@
                 revealElements.forEach(function(el) { revealObserver.observe(el); });
             }
             
+            // Smooth Scroll
             const anchorLinks = document.querySelectorAll('a[href^="#"]');
             anchorLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
@@ -1398,6 +1465,7 @@
                 });
             });
             
+            // Particles
             if (!prefersReducedMotion) {
                 const particles = document.querySelectorAll('.particle');
                 particles.forEach(function(particle, index) {
@@ -1406,6 +1474,7 @@
                 });
             }
             
+            // Counter Animation
             function animateCounter(element, target, duration) {
                 if (!element) return;
                 let start = 0;
