@@ -465,8 +465,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <br/>
 <br/>
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smileys/Person%20Bowing.png" width="30" alt="Pranam">
-
 *Built with reverence and respect for the great Maratha legacy*
 
 <br/>
