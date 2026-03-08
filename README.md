@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Flags/Flag%20India.png" alt="India Flag" width="50" height="50" />
+<img src="open [https://shreemantyogi.onrender.com/) deployed here" alt="DEPLOYED HERE" width="50" height="50" />
 
 <br/>
 <br/>
