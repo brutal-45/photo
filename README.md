@@ -282,7 +282,8 @@ bun or npm
 
 4. **Open in browser**
    ```
-   http://localhost:3000
+   open [https://shreemantyogi.onrender.com/) deployed here
+
    ```
 
 <br/>
