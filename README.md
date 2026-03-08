@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="open [https://shreemantyogi.onrender.com/) deployed here" alt="DEPLOYED HERE" width="50" height="50" />
+   src="open [https://shreemantyogi.onrender.com/) deployed here" alt="DEPLOYED HERE" width="50" height="50" />
 
 <br/>
 <br/>
