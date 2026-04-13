@@ -1,7 +1,7 @@
 <div align="center">
 
 
-[<img src="https://shreemantyogi.onrender.com" />](DEPLOYED HERE) 
+ [![DEPLOYED HERE](https://shreemantyogi.onrender.com)]() 
   
 
 <br/>
