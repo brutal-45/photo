@@ -1,7 +1,7 @@
 <div align="center">
 
 
-  https://shreemantyogi.onrender.com "DEPLOYED HERE" 
+[<img src="https://shreemantyogi.onrender.com" />](DEPLOYED HERE) 
   
 
 <br/>
