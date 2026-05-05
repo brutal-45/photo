@@ -129,7 +129,7 @@
 
 <br/>
 
-## 🏗️ **Project Sections**
+## 🏗️ **Project Sections**     
 
 <table>
 <tr>
