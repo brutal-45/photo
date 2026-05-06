@@ -50,7 +50,7 @@
   </tr>
   <tr>
     <td align="center" width="50%">
-      <b>👑 Portrait</b>
+      <b>👑 Portrait </b> 
       <br/><br/>
       <img src="https://i.ibb.co/1YW1JypT/Screenshot-2026-02-15-190636.png" alt="Portrait" width="60%" style="border-radius: 50%; box-shadow: 0 8px 32px rgba(212,168,75,0.4);">
     </td>
