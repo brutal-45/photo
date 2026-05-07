@@ -166,7 +166,7 @@ The dream of Hindavi Swarajya
 
 The vision of self-rule with governance principles
 
-</td>
+</td> 
 <td align="center" width="33%">
 
 ### ⚔️ **Military Genius**
